@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
 
+import Home from "./Home";
+import SignupForm from "./SignupForm";
+
+import React from 'react';
+import { useNavigate, Routes, Route } from "react-router-dom";
+
 function App() {
+  const navigate = useNavigate();
+
+  const handleSignupClick = () => {
+      navigate('/signup');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      // TODO: Add LoginForm and Route button to the LoginForm page - the Login must check with firebase
+      <Routes>
+          <Route exact path="/" element={<Home handleSignupClick={handleSignupClick} />} />
+          <Route path="/signup" element={<SignupForm/>} />
+      </Routes>
   );
 }
 
