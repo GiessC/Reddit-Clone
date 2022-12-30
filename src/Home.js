@@ -8,8 +8,7 @@ export default class Home extends React.Component {
         return (
             <div>
                 <h1>Welcome to the home page!</h1>
-                <p>This is where you can put your home page content.</p>
-                <LoginButton />
+                <LoginButton handleClick={this.props.handleLoginClick}/>
                 <SignupButton handleClick={this.props.handleSignupClick} />
             </div>
         );
